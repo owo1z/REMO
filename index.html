@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>REMO TEAM</title>
+<meta name="description" content="우리는 가치와 문제를 비즈니스로 풀어내며 실행으로 증명한다. REMO TEAM 팀기업 홈페이지.">
+<meta property="og:title" content="REMO TEAM">
+<meta property="og:description" content="우리는 가치와 문제를 비즈니스로 풀어내며 실행으로 증명한다.">
+<meta property="og:type" content="website">
+
+<!--
+  ════════════════════════════════════════════════════════════════
+  REMO TEAM · remoteam.com
+  이 파일 하나가 사이트 전부입니다. GitHub에 index.html 로 올리면
+  Vercel이 그대로 띄웁니다.
+
+  고칠 곳은 아래 네 군데뿐입니다. 파일에서 검색해 보세요.
+    [ ]           ← 대괄호 안이 비어 있는 곳. 그 자리에 글을 씁니다.
+    EDIT: 프로젝트  ← 프로젝트 이름 · 산업 · 판매 · 이동할 주소
+    EDIT: 팀원      ← 팀원 역할 · 한 줄 소개
+    EDIT: 이메일    ← 팀 대표 메일과 팀원 메일
+
+  사진을 넣으려면 같은 저장소에 이미지를 올리고
+  <div class="photo">PHOTO</div> 를
+  <img class="photo" src="파일이름.jpg" alt="이름"> 로 바꾸면 됩니다.
+  ════════════════════════════════════════════════════════════════
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap">
+
+<style>
+/* ── 색 · PANTONE 19-4033 Poseidon / 15-4427 Norse Blue / 17-1449 Pureed Pumpkin ── */
+:root {
+  --ink: #133955;
+  --ink-soft: #3d6280;
+  --blue: #4ca5c7;
+  --blue-pale: #9fc9da;
+  --flame: #c34121;
+  --paper: #f5f3ee;
+  --white: #ffffff;
+  --body: #2e4a60;
+  --muted: #46607a;
+  --line: #c6d5de;
+  --line-soft: #8fb4c6;
+  --on-dark: #c8dce6;
+  --tint: rgba(76, 165, 199, .10);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Noto Sans KR", system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--flame); outline-offset: 3px; }
+
+.wrap { max-width: 1280px; margin: 0 auto; padding-inline: 20px; }
+@media (min-width: 768px) { .wrap { padding-inline: 64px; } }
+
+/* ── 머리말 ── */
+.site-head { border-bottom: 1px dashed var(--ink); background: var(--paper); }
+.head-in { display: flex; align-items: center; justify-content: space-between; padding-block: 16px; gap: 16px; }
+.wordmark { font-family: "Playfair Display", Georgia, serif; font-size: 20px; letter-spacing: .22em; text-decoration: none; }
+@media (min-width: 768px) { .wordmark { font-size: 23px; } .head-in { padding-block: 24px; } }
+
+.nav { display: none; align-items: center; gap: 30px; }
+@media (min-width: 900px) { .nav { display: flex; } }
+.nav a { font-size: 14px; color: var(--muted); text-decoration: none; padding-bottom: 3px; border-bottom: 2px solid transparent; }
+.nav a:hover { color: var(--flame); }
+.nav a.on { color: var(--ink); font-weight: 500; border-bottom-color: var(--flame); }
+.nav a.cta { background: var(--ink); color: var(--paper); padding: 11px 20px; border-radius: 2px; font-size: 12px; letter-spacing: .16em; border-bottom: 0; }
+.nav a.cta:hover { background: var(--flame); color: var(--paper); }
+.nav a.cta.on { background: var(--flame); }
+
+.burger { display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 5px; width: 44px; height: 44px; border: 0; background: none; cursor: pointer; padding: 0; }
+@media (min-width: 900px) { .burger { display: none; } }
+.burger span { display: block; height: 1.5px; width: 24px; background: var(--ink); }
+.burger span:last-child { width: 15px; background: var(--flame); }
+
+.nav-mobile { display: none; border-top: 1px dashed var(--line); background: var(--white); }
+.nav-mobile.open { display: block; }
+@media (min-width: 900px) { .nav-mobile, .nav-mobile.open { display: none; } }
+.nav-mobile a { display: block; padding: 16px 20px; font-size: 14px; color: var(--body); text-decoration: none; border-bottom: 1px dashed var(--line); }
+.nav-mobile a:last-child { border-bottom: 0; }
+.nav-mobile a.on { color: var(--flame); font-weight: 500; }
+
+/* ── 화면 전환 ── */
+.page { display: block; }
+.js .page { display: none; }
+.js .page.on { display: block; }
+
+/* ── 공통 ── */
+.eyebrow { font-size: 11px; letter-spacing: .4em; color: var(--flame); margin: 0 0 20px; }
+h1 { font-family: "Noto Serif KR", Georgia, serif; font-weight: 600; letter-spacing: -.02em; margin: 0; text-wrap: balance; }
+h2 { margin: 0; font-weight: 500; }
+.hr { border-top: 2px dashed var(--ink); }
+
+.blank { color: var(--muted); }
+.blank-box { border: 1px dashed var(--line-soft); background: var(--tint); padding: 18px 20px; color: var(--muted); }
+.blank-box .tag { font-size: 10px; letter-spacing: .26em; display: block; margin-bottom: 8px; }
+.blank-box p { margin: 0; font-size: 14px; line-height: 1.9; }
+
+.btn { display: inline-block; text-decoration: none; padding: 16px 28px; border-radius: 2px; font-size: 13px; letter-spacing: .14em; }
+.btn-dark { background: var(--ink); color: var(--paper); }
+.btn-dark:hover { background: var(--flame); }
+.btn-flame { background: var(--flame); color: var(--paper); font-size: 12px; letter-spacing: .16em; }
+.btn-flame:hover { opacity: .9; }
+.btn-line { border: 1px solid var(--ink); color: var(--ink); }
+.btn-line:hover { background: var(--ink); color: var(--paper); }
+.btn-paper { background: var(--paper); color: var(--ink); }
+.btn-paper:hover { background: var(--white); }
+
+/* ── 메인 ── */
+.hero { display: flex; flex-direction: column; gap: 32px; padding-block: 48px 40px; }
+@media (min-width: 900px) { .hero { flex-direction: row; align-items: flex-start; gap: 56px; padding-block: 86px 62px; } }
+.hero-main { flex: 1; }
+.hero h1 { font-size: 32px; line-height: 1.35; }
+@media (min-width: 640px) { .hero h1 { font-size: 42px; } }
+@media (min-width: 900px) { .hero h1 { font-size: 56px; line-height: 1.32; } }
+.hero .blank-box { margin-top: 30px; max-width: 620px; }
+
+.glance { background: var(--ink); color: var(--paper); padding: 26px 24px; flex-shrink: 0; }
+@media (min-width: 900px) { .glance { width: 240px; } }
+.glance .tag { font-size: 10px; letter-spacing: .3em; color: var(--blue-pale); margin: 0 0 16px; }
+.glance p { margin: 0; font-size: 13px; line-height: 2.1; }
+.glance .rule { margin-top: 22px; height: 4px; background: var(--blue); }
+
+.stats { border-block: 1px dashed var(--ink); background: var(--white); }
+.stats-in { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 768px) { .stats-in { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.stat { padding-block: 28px; }
+@media (min-width: 768px) { .stat + .stat { padding-left: 32px; } .stat:not(:last-child) { border-right: 1px dashed var(--line); } }
+.stat .n { font-family: "Playfair Display", Georgia, serif; font-size: 36px; line-height: 1; }
+@media (min-width: 768px) { .stat .n { font-size: 44px; } }
+.stat .n.flame { color: var(--flame); }
+.stat .t { margin-top: 8px; font-size: 12px; letter-spacing: .14em; color: var(--muted); }
+
+.vision { display: flex; flex-direction: column; gap: 32px; padding-block: 56px; }
+@media (min-width: 900px) { .vision { flex-direction: row; gap: 48px; padding-block: 72px; } }
+.vision-main { flex: 1; }
+.head-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 16px; }
+.head-row .kicker { font-size: 11px; letter-spacing: .3em; color: var(--flame); }
+.head-row h2 { font-family: "Playfair Display", Georgia, serif; font-size: 28px; }
+@media (min-width: 768px) { .head-row h2 { font-size: 34px; } }
+.vision p.words { margin: 24px 0 0; max-width: 620px; font-family: "Noto Serif KR", Georgia, serif; font-size: 21px; line-height: 1.6; }
+@media (min-width: 768px) { .vision p.words { font-size: 27px; } }
+.target { background: var(--blue); color: #0f2c41; padding: 28px 26px; flex-shrink: 0; }
+@media (min-width: 900px) { .target { width: 360px; } }
+.target .tag { font-size: 10px; letter-spacing: .28em; }
+.target .big { margin-top: 14px; font-family: "Playfair Display", Georgia, serif; font-size: 28px; line-height: 1.25; }
+@media (min-width: 768px) { .target .big { font-size: 34px; } }
+.target .sub { margin-top: 6px; font-size: 14px; }
+
+.section-head { display: flex; flex-direction: column; gap: 12px; }
+@media (min-width: 768px) { .section-head { flex-direction: row; align-items: flex-end; justify-content: space-between; gap: 40px; } }
+
+.cards { display: grid; gap: 24px; margin-top: 24px; }
+@media (min-width: 640px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+.value { border: 1px solid var(--ink); background: var(--white); padding: 28px 26px 30px; }
+.value.dark { background: var(--ink); color: var(--paper); }
+.value .row { display: flex; align-items: center; justify-content: space-between; }
+.value .no { font-size: 10px; letter-spacing: .3em; color: var(--flame); }
+.value.dark .no { color: var(--blue-pale); }
+.value .dot { width: 10px; height: 10px; background: var(--blue); }
+.value h3 { margin: 16px 0 12px; font-family: "Noto Serif KR", Georgia, serif; font-size: 22px; font-weight: 600; }
+.value.dark h3 { color: var(--white); }
+.value h3 em { font-style: normal; font-size: 14px; font-weight: 400; color: var(--muted); margin-left: 6px; }
+.value.dark h3 em { color: var(--blue-pale); }
+.value p { margin: 0; font-size: 13px; line-height: 1.95; color: var(--body); }
+.value.dark p { color: #e4edf2; font-size: 15px; }
+.value.dark p.note { color: var(--blue-pale); font-size: 13px; margin-top: 10px; }
+.value.empty { border-style: dashed; border-color: var(--line-soft); background: var(--tint); display: flex; flex-direction: column; justify-content: center; }
+.value.empty .no { color: var(--muted); }
+.value.empty p { color: var(--muted); font-size: 14px; margin-top: 14px; }
+
+/* ── 명함 카드 ── */
+.project {
+  display: flex; flex-direction: column; justify-content: space-between;
+  aspect-ratio: 9 / 5; max-width: 100%;
+  border: 1px solid var(--ink); background: var(--ink);
+  padding: 20px 22px; text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.project:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(19, 57, 85, .28); }
+.project:hover .open { opacity: 1; }
+.project .row { display: flex; align-items: flex-start; justify-content: space-between; }
+.project .no { font-size: 9px; letter-spacing: .32em; color: var(--flame); }
+.project .open { font-size: 11px; letter-spacing: .14em; color: var(--flame); opacity: 0; transition: opacity .2s ease; }
+.project .name { font-family: "Noto Serif KR", Georgia, serif; font-size: 25px; line-height: 1.3; color: var(--on-dark); }
+.project .spec { border-top: 1px dashed var(--ink-soft); padding-top: 11px; font-size: 12px; line-height: 2; color: var(--on-dark); }
+.project .spec .blank { color: #8fa9bb; }
+.project.add { border-style: dashed; border-color: var(--line-soft); background: var(--tint); color: var(--muted); align-items: center; justify-content: center; gap: 8px; text-align: center; }
+.project.add .plus { font-size: 26px; line-height: 1; }
+.project.add .l1 { font-size: 12px; letter-spacing: .12em; }
+.project.add .l2 { font-size: 11px; }
+
+.note-box { display: flex; flex-direction: column; gap: 16px; border: 1px solid var(--ink); background: var(--white); padding: 24px 28px; margin-top: 32px; }
+@media (min-width: 900px) { .note-box { flex-direction: row; align-items: center; gap: 36px; } }
+.note-box .tag { font-size: 10px; letter-spacing: .3em; color: var(--flame); }
+.note-box p { margin: 10px 0 0; font-size: 13px; line-height: 1.95; color: var(--body); }
+.note-box .meta { font-size: 11px; line-height: 2.1; letter-spacing: .06em; color: var(--muted); flex-shrink: 0; border-top: 1px dashed var(--line); padding-top: 14px; }
+@media (min-width: 900px) { .note-box .meta { border-top: 0; border-left: 1px dashed var(--line); padding: 0 0 0 28px; } }
+
+/* ── 팀원 ── */
+.people { display: grid; gap: 24px; margin-top: 24px; }
+@media (min-width: 640px) { .people { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .people.leaders { grid-template-columns: repeat(4, minmax(0, 1fr)); } .people.mates { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.person { border: 1px solid var(--ink); background: var(--white); padding: 18px 18px 22px; transition: transform .18s ease, box-shadow .18s ease; }
+.person:hover { transform: translateY(-4px); box-shadow: 0 12px 26px rgba(19, 57, 85, .14); }
+.person .row { display: flex; align-items: center; justify-content: space-between; }
+.person .no { font-size: 9px; letter-spacing: .32em; color: var(--flame); }
+.person .dot { width: 9px; height: 9px; background: var(--blue); }
+.photo { display: flex; align-items: center; justify-content: center; border: 1px dashed var(--line-soft); background: var(--tint); color: var(--muted); font-size: 10px; letter-spacing: .24em; object-fit: cover; }
+.person .photo { margin-top: 14px; height: 188px; width: 100%; }
+.person h3 { margin: 16px 0 4px; font-family: "Noto Serif KR", Georgia, serif; font-size: 22px; font-weight: 600; }
+.person .role { font-size: 12px; color: var(--muted); }
+.person .bio { margin: 12px 0 0; font-size: 13px; line-height: 1.85; color: var(--muted); }
+.person.wide { display: flex; gap: 18px; padding: 20px 22px; }
+.person.wide .photo { margin: 0; width: 96px; height: 118px; flex-shrink: 0; }
+.person.wide h3 { margin: 10px 0 4px; font-size: 20px; }
+
+/* ── 고객 상담 ── */
+.mail-hero { display: flex; flex-direction: column; gap: 24px; background: var(--ink); color: var(--paper); padding: 34px 28px; }
+@media (min-width: 768px) { .mail-hero { flex-direction: row; align-items: center; justify-content: space-between; padding: 38px 44px; } }
+.mail-hero .tag { font-size: 10px; letter-spacing: .32em; color: var(--blue-pale); }
+.mail-hero .addr { margin-top: 14px; font-family: "Playfair Display", Georgia, serif; font-size: 26px; color: var(--white); word-break: break-all; }
+@media (min-width: 768px) { .mail-hero .addr { font-size: 36px; } }
+
+.mails { display: grid; margin-top: 16px; }
+@media (min-width: 900px) { .mails { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 44px; } }
+.mail-row { display: flex; align-items: center; gap: 12px; padding-block: 16px; border-bottom: 1px dashed var(--line); }
+.mail-row .idx { width: 28px; font-size: 10px; letter-spacing: .18em; color: var(--muted); }
+.mail-row .who { width: 66px; flex-shrink: 0; font-family: "Noto Serif KR", Georgia, serif; font-size: 17px; font-weight: 600; }
+.mail-row .grp { display: none; width: 104px; flex-shrink: 0; font-size: 11px; letter-spacing: .08em; color: var(--muted); }
+@media (min-width: 560px) { .mail-row .grp { display: block; } }
+.mail-row .grp.lead { color: var(--flame); }
+.mail-row .addr { flex: 1; min-width: 0; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mail-row .go { flex-shrink: 0; border: 1px solid var(--ink); padding: 9px 14px; border-radius: 2px; font-size: 11px; letter-spacing: .12em; text-decoration: none; }
+.mail-row .go:hover { background: var(--ink); color: var(--paper); }
+.mail-row .go.off { border-style: dashed; border-color: var(--line-soft); color: var(--muted); pointer-events: none; }
+
+/* ── 랜딩 ── */
+.landing { display: flex; flex-direction: column; align-items: center; text-align: center; padding-block: 72px; }
+@media (min-width: 768px) { .landing { padding-block: 110px; } }
+.landing h1 { font-size: 36px; line-height: 1.32; }
+@media (min-width: 768px) { .landing h1 { font-size: 62px; } }
+.landing .blank-box { margin-top: 32px; width: 100%; max-width: 620px; text-align: left; }
+.bar { margin-top: 40px; width: 100%; max-width: 620px; height: 6px; background: #e0e5e4; }
+.bar span { display: block; width: 45%; height: 100%; background: var(--blue); }
+.bar-meta { margin-top: 10px; width: 100%; max-width: 620px; display: flex; justify-content: space-between; font-size: 10px; letter-spacing: .2em; color: var(--muted); }
+.landing .btns { margin-top: 44px; display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+
+.cta-band { display: flex; flex-direction: column; gap: 24px; background: var(--ink); color: var(--paper); padding: 36px 28px; margin-block: 8px 56px; }
+@media (min-width: 768px) { .cta-band { flex-direction: row; align-items: center; justify-content: space-between; padding: 46px 48px; } }
+.cta-band .tag { font-size: 11px; letter-spacing: .34em; color: var(--blue-pale); margin: 0 0 12px; }
+.cta-band h2 { font-family: "Noto Serif KR", Georgia, serif; font-size: 24px; font-weight: 600; color: var(--white); }
+@media (min-width: 768px) { .cta-band h2 { font-size: 30px; } }
+.cta-band p { margin: 12px 0 0; font-size: 14px; color: var(--on-dark); }
+
+/* ── 꼬리말 ── */
+.site-foot { border-top: 1px dashed var(--ink); }
+.foot-in { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; padding-block: 24px; font-size: 12px; letter-spacing: .16em; color: var(--muted); }
+
+.page-head { display: flex; flex-direction: column; gap: 28px; padding-block: 48px 40px; }
+@media (min-width: 900px) { .page-head { flex-direction: row; align-items: flex-end; justify-content: space-between; padding-block: 70px 40px; } }
+.page-head h1 { font-size: 32px; line-height: 1.3; }
+@media (min-width: 768px) { .page-head h1 { font-size: 48px; } }
+.page-head .side { flex-shrink: 0; font-size: 12px; line-height: 2.1; letter-spacing: .06em; color: var(--muted); }
+@media (min-width: 900px) { .page-head .side { text-align: right; } }
+.sub-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 16px; padding-top: 22px; }
+.sub-head h2 { font-family: "Playfair Display", Georgia, serif; font-size: 26px; }
+.sub-head span { font-size: 13px; color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+
+<body>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="wordmark" href="#main">REMO TEAM</a>
+    <nav class="nav">
+      <a href="#main" data-nav="main">메인</a>
+      <a href="#team" data-nav="team">팀원 구성원</a>
+      <a href="#projects" data-nav="projects">진행 프로젝트</a>
+      <a href="#landing" data-nav="landing">랜딩 페이지</a>
+      <a class="cta" href="#contact" data-nav="contact">고객 상담</a>
+    </nav>
+    <button class="burger" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-mobile">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="nav-mobile">
+    <a href="#main" data-nav="main">메인</a>
+    <a href="#team" data-nav="team">팀원 구성원</a>
+    <a href="#projects" data-nav="projects">진행 프로젝트</a>
+    <a href="#landing" data-nav="landing">랜딩 페이지</a>
+    <a href="#contact" data-nav="contact">고객 상담</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ══════════ 메인 ══════════ -->
+<section class="page on" id="main">
+  <div class="wrap hero">
+    <div class="hero-main">
+      <p class="eyebrow">MISSION · 미션</p>
+      <h1>우리는 가치와 문제를<br>비즈니스로 풀어내며<br>실행으로 증명한다.</h1>
+      <div class="blank-box">
+        <span class="tag">INTRO</span>
+        <p>[ 팀기업 소개 문구를 여기에 작성하세요 — 어떤 팀인지, 무엇을 하는 팀인지 2~3문장 ]</p>
+      </div>
+    </div>
+    <aside class="glance">
+      <p class="tag">AT A GLANCE</p>
+      <p>REMO TEAM<br>remoteam.com<br>구성원 10명</p>
+      <div class="rule"></div>
+    </aside>
+  </div>
+
+  <div class="stats">
+    <div class="wrap stats-in">
+      <div class="stat"><div class="n">10</div><div class="t">구성원</div></div>
+      <div class="stat"><div class="n">04</div><div class="t">팀 리더 · Team Leader</div></div>
+      <div class="stat"><div class="n">06</div><div class="t">팀원 · Teammate</div></div>
+      <div class="stat"><div class="n flame">04</div><div class="t">진행 프로젝트</div></div>
+    </div>
+  </div>
+
+  <div class="wrap vision">
+    <div class="vision-main">
+      <div class="head-row">
+        <span class="kicker">VISION</span>
+        <h2>비전 — LEINN 2년차</h2>
+      </div>
+      <p class="words">혼자가 아닌 팀으로 선순환하며,<br>시장의 평가 속에서 성장한다.</p>
+    </div>
+    <div class="target">
+      <div class="tag">TARGET</div>
+      <div class="big">인당 매출 600만원</div>
+      <div class="sub">또는 수익 [ n ]원 달성</div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="hr" style="padding-top:26px">
+      <div class="section-head">
+        <div class="head-row">
+          <span class="kicker">CORE VALUE</span>
+          <h2>우리가 지키는 다섯 가지</h2>
+        </div>
+        <span style="font-size:12px;letter-spacing:.12em;color:var(--muted)">학습 · 협력 · 신뢰 · 책임 · 실행</span>
+      </div>
+    </div>
+
+    <div class="cards" style="padding-bottom:64px">
+      <article class="value">
+        <div class="row"><span class="no">VALUE 01</span><span class="dot"></span></div>
+        <h3>학습 <em>성장</em></h3>
+        <p>우리는 함께 학습합니다. 개인의 경험과 배움을 팀으로 연결하며, 시행착오와 프로젝트를 통해 성장합니다. 지레짐작 하지 않고 적극적으로 질문하고 행동합니다. 개인의 성장이 팀의 성장으로 이어지고, 팀의 성장이 다시 개인의 성장을 돕는 선순환을 만듭니다.</p>
+      </article>
+      <article class="value">
+        <div class="row"><span class="no">VALUE 02</span><span class="dot"></span></div>
+        <h3>협력</h3>
+        <p>우리는 함께 성과를 만듭니다. 개인의 강점과 다양성을 통해 더 큰 가치를 만들어내며, 서로의 성장을 응원합니다. 다양한 관점과 생각을 환영하며, 개인의 성과를 팀의 성과로 확장합니다. 우리는 혼자서 빠르게 가기보다 함께 멀리 가는 길을 선택합니다.</p>
+      </article>
+      <article class="value">
+        <div class="row"><span class="no">VALUE 03</span><span class="dot"></span></div>
+        <h3>신뢰 <em>안전감</em></h3>
+        <p>우리는 신뢰를 쌓아갑니다. 우리는 어려움과 실수, 아쉬움을 그때그때 공유하며, 팀원 모두에게 안전한 팀이 될 것입니다. 서로를 믿고 의지할 수 있는 공동체가 되기를 희망합니다.</p>
+      </article>
+      <article class="value">
+        <div class="row"><span class="no">VALUE 04</span><span class="dot"></span></div>
+        <h3>책임 <em>설명</em></h3>
+        <p>우리는 서로를 책임집니다. 역할과 약속에 책임을 다하며, 문제를 외면하거나 미루지 않고 스스로 그리고 함께 해결하려 노력합니다. 말하는 것과 말하지 않는 것 모두 의사 표현입니다. 자신의 의사 표현에 대한 결과를 책임집니다.</p>
+      </article>
+      <article class="value dark">
+        <div class="row"><span class="no">VALUE 05</span><span class="dot"></span></div>
+        <h3>실행 <em>실험</em></h3>
+        <p>골대가 보이면 일단 합니다.</p>
+        <p class="note">목적지를 정하면 우선 실행합니다.</p>
+      </article>
+      <article class="value empty">
+        <span class="no">BLANK</span>
+        <p>[ 덧붙이고 싶은 가치나 팀 문화를 여기에 작성하세요 ]</p>
+      </article>
+    </div>
+
+    <div class="hr" style="padding-top:30px;padding-bottom:64px">
+      <div class="section-head">
+        <div>
+          <div class="head-row">
+            <span class="kicker">PROJECTS</span>
+            <h2>진행 중인 프로젝트</h2>
+          </div>
+          <div class="blank-box" style="margin-top:20px;max-width:540px">
+            <p>[ 프로젝트 섹션 소개 문구를 여기에 작성하세요 ]</p>
+          </div>
+        </div>
+        <a class="btn btn-flame" href="#projects">전체 프로젝트 보기 →</a>
+      </div>
+
+      <div class="cards">
+        <!-- EDIT: 프로젝트 — 메인에 미리 보이는 3장 -->
+        <a class="project" href="#" target="_blank" rel="noopener noreferrer" aria-label="MOODISM 프로젝트 사이트로 이동 (새 창)">
+          <div class="row"><span class="no">PROJECT 01</span><span class="open">OPEN ↗</span></div>
+          <div class="name">MOODISM</div>
+          <div class="spec">산업 · <span class="blank">[ &nbsp;&nbsp;&nbsp;&nbsp; ]</span><br>판매 · <span class="blank">[ &nbsp;&nbsp;&nbsp;&nbsp; ]</span></div>
+        </a>
+        <a class="project" href="#" target="_blank" rel="noopener noreferrer" aria-label="DATA FLOW 프로젝트 사이트로 이동 (새 창)">
+          <div class="row"><span class="no">PROJECT 02</span><span class="open">OPEN ↗</span></div>
+          <div class="name">DATA FLOW</div>
+          <div class="spec">산업 · <span class="blank">[ &nbsp;&nbsp;&nbsp;&nbsp; ]</span><br>판매 · <span class="blank">[ &nbsp;&nbsp;&nbsp;&nbsp; ]</span></div>
+        </a>
+        <a class="project" href="#" target="_blank" rel="noopener noreferrer" aria-label="NOWESA 프로젝트 사이트로 이동 (새 창)">
+          <div class="row"><span class="no">PROJECT 03</span><span class="open">OPEN ↗</span></div>
+          <div class="name">NOWESA</div>
+          <div class="spec">산업 · <span class="blank">[ &nbsp;&nbsp;&nbsp;&nbsp; ]</span><br>판매 · <span class="blank">[ &nbsp;&nbsp;&nbsp;&nbsp; ]</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <p class="tag">CONTACT</p>
+        <h2>함께 풀고 싶은 문제가 있다면</h2>
+        <p>[ 상담 안내 한 줄을 여기에 작성하세요 ]</p>
+      </div>
+      <a class="btn btn-paper" href="#contact">고객 상담 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 팀원 구성원 ══════════ -->
+<section class="page" id="team">
+  <div class="wrap">
+    <div class="page-head">
+      <div>
+        <p class="eyebrow">MEMBERS · 10</p>
+        <h1>팀원 구성원 소개</h1>
+        <div class="blank-box" style="margin-top:24px;max-width:560px">
+          <p>[ 팀 구성에 대한 소개 문구를 여기에 작성하세요 ]</p>
+        </div>
+      </div>
+      <div class="side">TEAM LEADER · 04<br>TEAMMATE · 06<br>TOTAL · 10</div>
+    </div>
+
+    <div class="hr">
+      <div class="sub-head"><h2>Team Leader</h2><span>팀 리더 · 4명</span></div>
+    </div>
+
+    <!-- EDIT: 팀원 — 역할과 한 줄 소개를 대괄호 자리에 씁니다 -->
+    <div class="people leaders" style="padding-bottom:52px">
+      <article class="person">
+        <div class="row"><span class="no">MEMBER 01</span><span class="dot"></span></div>
+        <div class="photo">PHOTO</div>
+        <h3>브루노</h3>
+        <div class="role">[ 역할 ]</div>
+        <p class="bio">[ 한 줄 소개 ]</p>
+      </article>
+      <article class="person">
+        <div class="row"><span class="no">MEMBER 02</span><span class="dot"></span></div>
+        <div class="photo">PHOTO</div>
+        <h3>조이</h3>
+        <div class="role">[ 역할 ]</div>
+        <p class="bio">[ 한 줄 소개 ]</p>
+      </article>
+      <article class="person">
+        <div class="row"><span class="no">MEMBER 03</span><span class="dot"></span></div>
+        <div class="photo">PHOTO</div>
+        <h3>쏠</h3>
+        <div class="role">[ 역할 ]</div>
+        <p class="bio">[ 한 줄 소개 ]</p>
+      </article>
+      <article class="person">
+        <div class="row"><span class="no">MEMBER 04</span><span class="dot"></span></div>
+        <div class="photo">PHOTO</div>
+        <h3>유진</h3>
+        <div class="role">[ 역할 ]</div>
+        <p class="bio">[ 한 줄 소개 ]</p>
+      </article>
+    </div>
+
+    <div class="hr">
+      <div class="sub-head"><h2>Teammate</h2><span>팀원 · 6명</span></div>
+    </div>
+
+    <div class="people mates" style="padding-bottom:64px">
+      <article class="person wide">
+        <div class="photo">PHOTO</div>
+        <div>
+          <span class="no">MEMBER 05</span>
+          <h3>정우</h3>
+          <div class="role">[ 역할 ]</div>
+          <p class="bio">[ 한 줄 소개 ]</p>
+        </div>
+      </article>
+      <article class="person wide">
+        <div class="photo">PHOTO</div>
+        <div>
+          <span class="no">MEMBER 06</span>
+          <h3>이든</h3>
+          <div class="role">[ 역할 ]</div>
+          <p class="bio">[ 한 줄 소개 ]</p>
+        </div>
+      </article>
+      <article class="person wide">
+        <div class="photo">PHOTO</div>
+        <div>
+          <span class="no">MEMBER 07</span>
+          <h3>로</h3>
+          <div class="role">[ 역할 ]</div>
+          <p class="bio">[ 한 줄 소개 ]</p>
+        </div>
+      </article>
+      <article class="person wide">
+        <div class="photo">PHOTO</div>
+        <div>
+          <span class="no">MEMBER 08</span>
+          <h3>막스</h3>
+          <div class="role">[ 역할 ]</div>
+          <p class="bio">[ 한 줄 소개 ]</p>
+        </div>
+      </article>
+      <article class="person wide">
+        <div class="photo">PHOTO</div>
+        <div>
+          <span class="no">MEMBER 09</span>
+          <h3>비크</h3>
+          <div class="role">[ 역할 ]</div>
+          <p class="bio">[ 한 줄 소개 ]</p>
+        </div>
+      </article>
+      <article class="person wide">
+        <div class="photo">PHOTO</div>
+        <div>
+          <span class="no">MEMBER 10</span>
+          <h3>겸</h3>
+          <div class="role">[ 역할 ]</div>
+          <p class="bio">[ 한 줄 소개 ]</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 진행 프로젝트 ══════════ -->
+<section class="page" id="projects">
+  <div class="wrap">
+    <div class="page-head">
+      <div>
+        <p class="eyebrow">PROJECTS</p>
+        <h1>진행 프로젝트</h1>
+        <div class="blank-box" style="margin-top:24px;max-width:600px">
+          <p>[ 프로젝트 소개 문구를 여기에 작성하세요 ]</p>
+        </div>
+      </div>
+      <div class="side" style="border:1px solid var(--ink);background:var(--white);padding:16px 20px;text-align:left">
+        SIZE · 90 × 50 mm 명함 비율<br>
+        ACTION · 카드 전체가 링크<br>
+        URL · 화면 비노출
+      </div>
+    </div>
+
+    <!--
+      EDIT: 프로젝트
+      href="#" 자리에 그 프로젝트 홈페이지 주소를 넣으세요.
+      예) <a class="project" href="https://moodism.com" target="_blank" rel="noopener noreferrer" ...>
+      주소는 화면에 글자로 나오지 않고, 카드를 누르면 새 창으로 열립니다.
+    -->
+    <div class="cards">
+      <a class="project" href="#" target="_blank" rel="noopener noreferrer" aria-label="MOODISM 프로젝트 사이트로 이동 (새 창)">
+        <div class="row"><span class="no">PROJECT 01</span><span class="open">OPEN ↗</span></div>
+        <div class="name">MOODISM</div>
+        <div class="spec">산업 · <span class="blank">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</span><br>판매 · <span class="blank">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</span></div>
+      </a>
+      <a class="project" href="#" target="_blank" rel="noopener noreferrer" aria-label="DATA FLOW 프로젝트 사이트로 이동 (새 창)">
+        <div class="row"><span class="no">PROJECT 02</span><span class="open">OPEN ↗</span></div>
+        <div class="name">DATA FLOW</div>
+        <div class="spec">산업 · <span class="blank">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</span><br>판매 · <span class="blank">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</span></div>
+      </a>
+      <a class="project" href="#" target="_blank" rel="noopener noreferrer" aria-label="NOWESA 프로젝트 사이트로 이동 (새 창)">
+        <div class="row"><span class="no">PROJECT 03</span><span class="open">OPEN ↗</span></div>
+        <div class="name">NOWESA</div>
+        <div class="spec">산업 · <span class="blank">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</span><br>판매 · <span class="blank">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</span></div>
+      </a>
+      <a class="project" href="#" target="_blank" rel="noopener noreferrer" aria-label="PLN 프로젝트 사이트로 이동 (새 창)">
+        <div class="row"><span class="no">PROJECT 04</span><span class="open">OPEN ↗</span></div>
+        <div class="name">PLN</div>
+        <div class="spec">산업 · <span class="blank">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</span><br>판매 · <span class="blank">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]</span></div>
+      </a>
+      <div class="project add">
+        <div class="plus">+</div>
+        <div class="l1">프로젝트 추가 자리</div>
+        <div class="l2">위 카드 하나를 복사해 붙여 넣으면 늘어납니다</div>
+      </div>
+    </div>
+
+    <div class="note-box" style="margin-bottom:64px">
+      <div>
+        <div class="tag">HOW IT WORKS</div>
+        <p>카드 한 장이 프로젝트 하나의 링크입니다. 주소는 화면 어디에도 표시하지 않고, 카드를 누르면 새 창에서 해당 프로젝트 사이트가 열립니다. 키보드 Tab으로 이동하고 Enter로도 열 수 있습니다.</p>
+      </div>
+      <div class="meta">SIZE · 9:5 명함 비율<br>LINK · 새 창<br>URL · 비노출</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 랜딩 페이지 ══════════ -->
+<section class="page" id="landing">
+  <div class="wrap landing">
+    <p class="eyebrow">LANDING · 준비 중</p>
+    <h1>준비 중입니다</h1>
+    <div class="blank-box">
+      <span class="tag">CONTENT</span>
+      <p>[ 랜딩 페이지에 들어갈 내용을 여기에 작성하세요 — 어떤 제안을 담을지, 어떤 행동을 유도할지 ]</p>
+    </div>
+    <div class="bar"><span></span></div>
+    <div class="bar-meta"><span>2차 개발 예정</span><span>/landing</span></div>
+    <div class="btns">
+      <a class="btn btn-dark" href="#projects">진행 프로젝트 보기</a>
+      <a class="btn btn-line" href="#team">팀원 구성원 보기</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 고객 상담 ══════════ -->
+<section class="page" id="contact">
+  <div class="wrap">
+    <div class="page-head">
+      <div>
+        <p class="eyebrow">CONTACT</p>
+        <h1>고객 상담</h1>
+        <div class="blank-box" style="margin-top:24px;max-width:580px">
+          <p>[ 상담 안내 문구를 여기에 작성하세요 — 어떤 문의를 받는지, 어떻게 답변하는지 ]</p>
+        </div>
+      </div>
+      <div class="blank-box side" style="text-align:left">
+        <span class="tag">RESPONSE</span>
+        <p>[ 응답 소요 시간 ]<br>[ 상담 가능 시간 ]</p>
+      </div>
+    </div>
+
+    <!--
+      EDIT: 이메일
+      아래 mailto: 뒤에 주소를 넣고, 바로 위 줄의 [ 이메일 주소 ] 도 같이 바꾸세요.
+      예) <a class="go" href="mailto:hello@remoteam.com">메일</a>
+      주소를 넣지 않은 칸은 버튼이 눌리지 않는 상태로 보입니다.
+    -->
+    <div class="mail-hero">
+      <div>
+        <div class="tag">TEAM EMAIL · 팀 대표 메일</div>
+        <div class="addr">[ 팀 이메일 주소 ]</div>
+      </div>
+      <a class="btn btn-paper" href="mailto:">메일 보내기 →</a>
+    </div>
+
+    <div class="hr" style="margin-top:44px">
+      <div class="sub-head"><h2>Members</h2><span>팀원별 메일 · 10명</span></div>
+    </div>
+
+    <div class="mails">
+      <div class="mail-row"><span class="idx">01</span><span class="who">브루노</span><span class="grp lead">TEAM LEADER</span><span class="addr blank">[ 이메일 주소 ]</span><a class="go off" href="mailto:">메일</a></div>
+      <div class="mail-row"><span class="idx">02</span><span class="who">조이</span><span class="grp lead">TEAM LEADER</span><span class="addr blank">[ 이메일 주소 ]</span><a class="go off" href="mailto:">메일</a></div>
+      <div class="mail-row"><span class="idx">03</span><span class="who">쏠</span><span class="grp lead">TEAM LEADER</span><span class="addr blank">[ 이메일 주소 ]</span><a class="go off" href="mailto:">메일</a></div>
+      <div class="mail-row"><span class="idx">04</span><span class="who">유진</span><span class="grp lead">TEAM LEADER</span><span class="addr blank">[ 이메일 주소 ]</span><a class="go off" href="mailto:">메일</a></div>
+      <div class="mail-row"><span class="idx">05</span><span class="who">정우</span><span class="grp">TEAMMATE</span><span class="addr blank">[ 이메일 주소 ]</span><a class="go off" href="mailto:">메일</a></div>
+      <div class="mail-row"><span class="idx">06</span><span class="who">이든</span><span class="grp">TEAMMATE</span><span class="addr blank">[ 이메일 주소 ]</span><a class="go off" href="mailto:">메일</a></div>
+      <div class="mail-row"><span class="idx">07</span><span class="who">로</span><span class="grp">TEAMMATE</span><span class="addr blank">[ 이메일 주소 ]</span><a class="go off" href="mailto:">메일</a></div>
+      <div class="mail-row"><span class="idx">08</span><span class="who">막스</span><span class="grp">TEAMMATE</span><span class="addr blank">[ 이메일 주소 ]</span><a class="go off" href="mailto:">메일</a></div>
+      <div class="mail-row"><span class="idx">09</span><span class="who">비크</span><span class="grp">TEAMMATE</span><span class="addr blank">[ 이메일 주소 ]</span><a class="go off" href="mailto:">메일</a></div>
+      <div class="mail-row"><span class="idx">10</span><span class="who">겸</span><span class="grp">TEAMMATE</span><span class="addr blank">[ 이메일 주소 ]</span><a class="go off" href="mailto:">메일</a></div>
+    </div>
+
+    <div class="note-box" style="margin-bottom:64px">
+      <div>
+        <div class="tag">NOTE</div>
+        <p>주소를 넣으면 메일 버튼이 살아나고, 누르는 순간 메일 앱이 열립니다. 주소를 넣지 않은 칸은 눌리지 않는 상태로 남습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-in">
+    <span>REMO TEAM · remoteam.com</span>
+    <span>© 2026 REMO TEAM</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.documentElement.className += " js";
+
+  var pages = document.querySelectorAll(".page");
+  var links = document.querySelectorAll("[data-nav]");
+  var burger = document.querySelector(".burger");
+  var mobileNav = document.getElementById("nav-mobile");
+
+  function show(id) {
+    var found = false;
+    for (var i = 0; i < pages.length; i++) {
+      var on = pages[i].id === id;
+      pages[i].classList.toggle("on", on);
+      if (on) found = true;
+    }
+    if (!found) { document.getElementById("main").classList.add("on"); id = "main"; }
+    for (var j = 0; j < links.length; j++) {
+      links[j].classList.toggle("on", links[j].getAttribute("data-nav") === id);
+    }
+    mobileNav.classList.remove("open");
+    burger.setAttribute("aria-expanded", "false");
+  }
+
+  function route() {
+    show((location.hash || "#main").slice(1));
+    window.scrollTo(0, 0);
+  }
+
+  window.addEventListener("hashchange", route);
+  route();
+
+  burger.addEventListener("click", function () {
+    var open = mobileNav.classList.toggle("open");
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+    burger.setAttribute("aria-label", open ? "메뉴 닫기" : "메뉴 열기");
+  });
+
+  // 주소를 아직 넣지 않은 프로젝트 카드는 눌러도 아무 일도 없게 둡니다.
+  document.addEventListener("click", function (event) {
+    var card = event.target.closest ? event.target.closest("a.project") : null;
+    if (card && card.getAttribute("href") === "#") event.preventDefault();
+  });
+})();
+</script>
+
+</body>
+</html>
