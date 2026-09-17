@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────────────────
+   REMO TEAM 디자인 토큰
+   PANTONE 19-4033 TCX Poseidon      #133955  기본 잉크 · 다크 블록
+   PANTONE 15-4427 TCX Norse Blue    #4CA5C7  보조 · 면과 그래픽
+   PANTONE 17-1449 TCX Pureed Pumpkin #C34121 포인트 · 라벨과 버튼
+   ────────────────────────────────────────────────────────── */
+@theme {
+  --color-ink: #133955;
+  --color-ink-soft: #3d6280;
+  --color-blue: #4ca5c7;
+  --color-blue-pale: #9fc9da;
+  --color-flame: #c34121;
+  --color-paper: #f5f3ee;
+  --color-body: #2e4a60;
+  --color-muted: #46607a;
+  --color-line: #c6d5de;
+  --color-line-soft: #8fb4c6;
+  --color-on-dark: #c8dce6;
+
+  --font-sans: "Noto Sans KR", system-ui, -apple-system, sans-serif;
+  --font-serif: "Noto Serif KR", Georgia, serif;
+  --font-display: "Playfair Display", Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* 키보드 이동 시 초점 표시 — 명함 카드 접근성의 핵심 */
+  :focus-visible {
+    outline: 2px solid var(--color-flame);
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  /* 점선 스티치 구분선 */
+  .stitch {
+    border-top: 1px dashed var(--color-ink);
+  }
+  .stitch-bold {
+    border-top: 2px dashed var(--color-ink);
+  }
+  .stitch-soft {
+    border-top: 1px dashed var(--color-line);
+  }
+  /* 직접 채워 넣을 자리 */
+  .blank {
+    border: 1px dashed var(--color-line-soft);
+    background: rgb(76 165 199 / 0.1);
+    color: var(--color-muted);
+  }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    color: var(--color-flame);
+  }
+}
