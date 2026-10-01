@@ -1,0 +1,9 @@
+{
+  "name": "remoteam",
+  "private": true,
+  "type": "module",
+  "description": "REMO TEAM 홈페이지 — 정적 페이지 + 게시판 API",
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.0"
+  }
+}
